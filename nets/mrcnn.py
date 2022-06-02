@@ -4,8 +4,7 @@ import tensorflow.keras.backend as K
 from tensorflow.keras.layers import (Activation, Add, BatchNormalization,
                                      Concatenate, Conv2D, Conv2DTranspose,
                                      Dense, Input, Lambda, MaxPooling2D,
-                                     Reshape, TimeDistributed, UpSampling2D,
-                                     ZeroPadding2D)
+                                     Reshape, TimeDistributed, UpSampling2D)
 from tensorflow.keras.models import Model
 from tensorflow.keras.regularizers import l2
 from utils.anchors import get_anchors
@@ -158,7 +157,6 @@ def build_fpn_mask_graph(rois, feature_maps, image_meta,
     #--------------------------------------------------------------------#
     x = TimeDistributed(Conv2D(num_classes, (1, 1), strides=1, activation="sigmoid", kernel_regularizer=l2(weight_decay)), name="mrcnn_mask")(x)
     return x
-
 
 def get_predict_model(config):
     h, w = config.IMAGE_SHAPE[:2]

@@ -287,8 +287,6 @@ class PyramidROIAlign(Layer):
     def compute_output_shape(self, input_shape):
         return input_shape[0][:2] + self.pool_shape + (input_shape[2][-1], )
 
-
-
 #----------------------------------------------------------#
 #   利用classifier的预测结果对建议框进行调整获得预测框
 #   获得每一个预测框的种类
@@ -505,6 +503,7 @@ def box_refinement_graph(box, gt_box):
 
     result = tf.stack([dy, dx, dh, dw], axis=1)
     return result
+
 #----------------------------------------------------------#
 #   Detection Target Layer
 #   该部分代码会输入建议框
@@ -661,7 +660,6 @@ def detection_targets_graph(proposals, gt_class_ids, gt_boxes, gt_masks, config)
 
     return rois, roi_gt_class_ids, deltas, masks
 
-
 class DetectionTargetLayer(Layer):
     """
     找到建议框的ground_truth
@@ -706,4 +704,3 @@ class DetectionTargetLayer(Layer):
 
     def compute_mask(self, inputs, mask=None):
         return [None, None, None, None]
-
