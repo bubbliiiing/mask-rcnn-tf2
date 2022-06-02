@@ -1,5 +1,6 @@
 import datetime
 import os
+import warnings
 
 import tensorflow as tf
 from pycocotools.coco import COCO
@@ -15,6 +16,8 @@ from utils.callbacks import LossHistory, ModelCheckpoint
 from utils.config import Config
 from utils.dataloader import COCODetection
 from utils.utils import get_classes, get_coco_label_map
+
+warnings.filterwarnings("ignore")
 
 if __name__ == "__main__":
     #---------------------------------------------------------------------#
