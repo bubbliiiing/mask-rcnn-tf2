@@ -5,9 +5,14 @@ import time
 
 import cv2
 import numpy as np
+import tensorflow as tf
 from PIL import Image
 
 from mask_rcnn import MASK_RCNN
+
+gpus = tf.config.experimental.list_physical_devices(device_type='GPU')
+for gpu in gpus:
+    tf.config.experimental.set_memory_growth(gpu, True)
 
 if __name__ == "__main__":
     mask_rcnn = MASK_RCNN()

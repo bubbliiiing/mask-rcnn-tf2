@@ -1,6 +1,7 @@
 import os
 import os.path as osp
 
+import tensorflow as tf
 from PIL import Image
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
@@ -9,6 +10,10 @@ from tqdm import tqdm
 from mask_rcnn import MASK_RCNN
 from utils.utils import get_classes, get_coco_label_map
 from utils.utils_map import Make_json, prep_metrics
+
+gpus = tf.config.experimental.list_physical_devices(device_type='GPU')
+for gpu in gpus:
+    tf.config.experimental.set_memory_growth(gpu, True)
 
 if __name__ == '__main__':
     #------------------------------------------------------------------------------------------------------------------#
