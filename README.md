@@ -1,4 +1,4 @@
-## Mask-Rcnn-实例分割模型在Keras当中的实现
+## Mask-Rcnn-实例分割模型在Tensorflow2当中的实现
 ---
 
 ### 目录
@@ -13,13 +13,10 @@
 9. [参考资料 Reference](#Reference)
 
 ## 注意事项！
-为了满足同学们计算mAP的需求，对代码进行了大改，现在使用COCO数据集格式，各位同学请仔细看README，视频中的步骤已经只能用于旧库，旧库地址参考Top News。
+为了满足同学们计算mAP的需求，对代码进行了大改，现在使用COCO数据集格式，各位同学请仔细看README。
 
 ## Top News
-**`2022-05`**:**进行大幅度更新、支持step、cos学习率下降法、支持adam、sgd优化器选择、支持学习率根据batch_size自适应调整、支持map评估。**  
-BiliBili视频中的原仓库地址为：https://github.com/bubbliiiing/mask-rcnn-keras/tree/bilibili
-
-**`2020-10`**:**创建仓库、支持训练与预测。**  
+**`2022-06`**:**创建仓库、支持训练与预测、支持step、cos学习率下降法、支持adam、sgd优化器选择、支持学习率根据batch_size自适应调整、支持map评估。**  
 
 ## 相关仓库
 | 模型 | 路径 |
@@ -28,15 +25,15 @@ yolact-keras | https://github.com/bubbliiiing/yolact-keras
 yolact-pytorch | https://github.com/bubbliiiing/yolact-pytorch
 yolact-tf2 | https://github.com/bubbliiiing/yolact-tf2
 mask-rcnn-keras | https://github.com/bubbliiiing/mask-rcnn-keras
+mask-rcnn-tf2 | https://github.com/bubbliiiing/mask-rcnn-tf2
 
 ## 所需环境
-tensorflow-gpu==1.13.1  
-keras==2.1.5  
+tensorflow-gpu==2.2.0
 
 ## 文件下载
 这个训练好的权重是基于coco数据集的，可以直接运行用于coco数据集的实例分割。  
-链接: https://pan.baidu.com/s/1JXdNZ_dTCjtxjLmrxFWrag     
-提取码: mpzp     
+链接: https://pan.baidu.com/s/1ES_j_ilclWneT4GbY7VQdg    
+提取码: gcgy    
 
 shapes数据集下载地址如下，该数据集是使用labelme标注的结果，尚未经过其它处理，用于区分三角形和正方形：  
 链接: https://pan.baidu.com/s/1hrCaEYbnSGBOhjoiOKQmig   
